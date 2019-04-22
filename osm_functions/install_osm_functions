@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -n "$3" ]; then
+    psql -h $1 -d $2 -U $3 <install_osm_functions.sql
+else
+    echo "Usage: install_osm_functions <hostname> <dbname> <username>"
+    exit 1
+fi
+
